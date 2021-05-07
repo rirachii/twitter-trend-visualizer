@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/geodata/usaLow.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Twitter Trend</title>
+</head>
+
+<body>
+  <h1>Current Twitter Trends in the USA</h1>
+  
+  <div id="mapdiv"></div>
+  <div id="chooseTrend">
+    <label for="trend">Choose Trend Tanking:</label>
+    <select id="trend" onchange="getTrend()">
+      <option value="0">#1</option>
+      <option value="1">#2</option>
+      <option value="2">#3</option>
+    </select>
+  </div>
+  <script src="map.js"></script>
+  <script>getTrend(1)</script>
+  <!-- <script>try1()</script> -->
+  
+</body>
+
+</html>
