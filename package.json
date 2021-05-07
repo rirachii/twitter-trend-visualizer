@@ -11,6 +11,10 @@
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
   },
+  "engines": {
+    "node": ">=14.16",
+    "npm": ">=6.14.11"
+  },
   "author": "rirachii",
   "license": "MIT",
   "dependencies": {
