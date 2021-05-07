@@ -4,17 +4,8 @@
   "description": "Creates_map_for_trend",
   "main": "index.js",
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "serve -s build",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "start": "node index.js"
    },
-  "engines": {
-    "node": "13.1.0",
-    "npm": "6.12.1",
-  },
   "author": "rirachii",
   "license": "MIT",
   "dependencies": {
