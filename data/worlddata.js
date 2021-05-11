@@ -96,10 +96,10 @@ module.exports = [
       "state": "LB", //  Lebanon
       "woeid": 23424873,
     },
-    {
-      "state": "LV", //  Latvia
-      "woeid": 23424874,
-    },
+    // {
+    //   "state": "LV", //  Latvia
+    //   "woeid": 23424874,
+    // },
     {
       "state": "JO", // Jordan
       "woeid": 23424860,

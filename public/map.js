@@ -1,9 +1,9 @@
-async function getTrend(rank){
+async function getTrend(){
     const response = await fetch('/worlddb');
     const res = await fetch('/usadb');
     const worlddb = await response.json();
     const usadb = await res.json();
-    let dropdown = document.getElementById('trend');
+    // let dropdown = document.getElementById('trend');
 
       //chart setup 
     let chart = am4core.create("mapdiv", am4maps.MapChart);
@@ -74,7 +74,7 @@ async function getTrend(rank){
         "id": usadb[i].state,
         "fill": am4core.color(usadb[i].trend1[2]),
         "query": usadb[i].trend1[1],
-        "trend1": worlddb[i].trend1[0]
+        "trend1": usadb[i].trend1[0]
         }
         usaSeries.data.push(graphdata)
     }
