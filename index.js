@@ -3,7 +3,12 @@ const app = express();
 app.listen(3000, () => console.log('listening at 3000'));
 app.use(express.static('public'));
 
-require('dotenv').config();
+require('dotenv').config({
+  consumer_key: process.env.CONSUMER_KEY,
+  consumer_secret: process.env.CONSUMER_SECRET,
+  access_token: process.env.ACCESS_TOKEN,
+  access_token_secret: process.env.ACCESS_TOKEN_SECRET,
+});
 const { json, response } = require('express');
 const Twit = require('twit');
 const config = require('./config')
@@ -18,8 +23,17 @@ const worlddb = new Datastore('worldtrend.db');
 usadb.loadDatabase();
 worlddb.loadDatabase();
 
+function usaLookup() {
+  //remove existing data first
+  T.get('trends/place', {"id": "23424977"}, (err) => {
+    if (err) {
+      return console.error(err.message);
+    }
+  })
+  looping(usadata, usadb)
+}
 
-function trendLookUp() {
+function worldLookup() {
   //remove existing data first
   T.get('trends/place', {"id": "23424977"}, (err) => {
     if (err) {
@@ -27,8 +41,8 @@ function trendLookUp() {
     }
   })
   looping(worlddata, worlddb)
-  looping(usadata, usadb)
 }
+
 
 function looping(dataset, database){
   database.remove({ }, { multi: true }, function (err, numRemoved) {
@@ -90,5 +104,7 @@ app.get('/usadb', (request, response) => {
     });
 });
 
-trendLookUp()
-setInterval(trendLookUp, 960000)
+usaLookup()
+worldLookup()
+setInterval(worldLookup, 960000)
+setInterval(usaLookup, 1860000)

@@ -115,11 +115,3 @@ async function getTrend(){
         }
     });
 }
-
-// function try1(){
-//     console.log("works")
-//     let trend1 = "1"
-//     let trend2 = "2"
-//     let rank = "1"
-//     console.log("hello {rank}")
-// }
