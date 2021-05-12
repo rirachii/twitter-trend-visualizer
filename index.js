@@ -3,12 +3,7 @@ const app = express();
 app.listen(3000, () => console.log('listening at 3000'));
 app.use(express.static('public'));
 
-require('dotenv').config({
-  consumer_key: process.env.CONSUMER_KEY,
-  consumer_secret: process.env.CONSUMER_SECRET,
-  access_token: process.env.ACCESS_TOKEN,
-  access_token_secret: process.env.ACCESS_TOKEN_SECRET,
-});
+require('dotenv').config();
 const { json, response } = require('express');
 const Twit = require('twit');
 const config = require('./config')
