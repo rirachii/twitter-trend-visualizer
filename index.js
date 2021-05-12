@@ -92,15 +92,3 @@ app.get('/usadb', (request, response) => {
 
 trendLookUp()
 setInterval(trendLookUp, 960000)
-
-// let test = [
-//     {
-//       "state": "US-AL",
-//       "woeid": 2364559,
-//     }, 
-//     {
-//       "state": "US-AZ",
-//       "woeid": 2471390
-//     }, ]
-// test[1].trend = "Monster"
-// console.log(test)
